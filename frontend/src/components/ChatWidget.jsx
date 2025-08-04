@@ -78,39 +78,63 @@ const ChatWidget = () => {
         <>
             {/* チャットボタン */}
             {!isOpen && (
-                <button
-                    onClick={startChat}
-                    style={{
-                        position: 'fixed',
-                        bottom: '32px',
-                        right: '32px',
-                        width: '64px',
-                        height: '64px',
-                        backgroundColor: '#6366f1',
-                        background: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '32px',
-                        boxShadow: '0 8px 32px rgba(99, 102, 241, 0.3)',
-                        cursor: 'pointer',
-                        fontSize: '24px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        transition: 'all 0.3s ease',
-                        zIndex: 1000
-                    }}
-                    onMouseEnter={(e) => {
-                        e.target.style.transform = 'scale(1.1)';
-                        e.target.style.boxShadow = '0 12px 40px rgba(99, 102, 241, 0.4)';
-                    }}
-                    onMouseLeave={(e) => {
-                        e.target.style.transform = 'scale(1)';
-                        e.target.style.boxShadow = '0 8px 32px rgba(99, 102, 241, 0.3)';
-                    }}
-                >
-                    💬
-                </button>
+                <>
+                    {/* 吹き出し案内 */}
+                    <div
+                        style={{
+                            position: 'fixed',
+                            bottom: '110px',
+                            right: '40px',
+                            backgroundColor: 'white',
+                            color: '#374151',
+                            padding: '12px 16px',
+                            borderRadius: '20px',
+                            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
+                            fontSize: '14px',
+                            fontWeight: '500',
+                            zIndex: 999,
+                            border: '1px solid #e5e7eb',
+                            whiteSpace: 'nowrap',
+                            animation: 'bounce 2s infinite'
+                        }}
+                    >
+                        ご質問がある方はこちら ↓
+                    </div>
+
+                    <button
+                        onClick={startChat}
+                        style={{
+                            position: 'fixed',
+                            bottom: '32px',
+                            right: '32px',
+                            width: '64px',
+                            height: '64px',
+                            backgroundColor: '#6366f1',
+                            background: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)',
+                            color: 'white',
+                            border: 'none',
+                            borderRadius: '32px',
+                            boxShadow: '0 8px 32px rgba(99, 102, 241, 0.3)',
+                            cursor: 'pointer',
+                            fontSize: '24px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            transition: 'all 0.3s ease',
+                            zIndex: 1000
+                        }}
+                        onMouseEnter={(e) => {
+                            e.target.style.transform = 'scale(1.1)';
+                            e.target.style.boxShadow = '0 12px 40px rgba(99, 102, 241, 0.4)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.target.style.transform = 'scale(1)';
+                            e.target.style.boxShadow = '0 8px 32px rgba(99, 102, 241, 0.3)';
+                        }}
+                    >
+                        💬
+                    </button>
+                </>
             )}
 
             {/* チャットウィンドウ */}
@@ -385,17 +409,28 @@ const ChatWidget = () => {
             {/* アニメーション用のスタイル */}
             <style>
                 {`
-          @keyframes typing {
-            0%, 60%, 100% {
-              transform: translateY(0);
-              opacity: 0.4;
-            }
-            30% {
-              transform: translateY(-10px);
-              opacity: 1;
-            }
-          }
-        `}
+    @keyframes typing {
+      0%, 60%, 100% {
+        transform: translateY(0);
+        opacity: 0.4;
+      }
+      30% {
+        transform: translateY(-10px);
+        opacity: 1;
+      }
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-5px);
+      }
+      60% {
+        transform: translateY(-3px);
+      }
+    }
+  `}
             </style>
         </>
     );
