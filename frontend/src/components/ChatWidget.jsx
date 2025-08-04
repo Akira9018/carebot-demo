@@ -129,8 +129,7 @@ const ChatWidget = () => {
                         flexDirection: 'column',
                         overflow: 'hidden',
                         zIndex: 1000,
-                        border: '8px solid #000',
-                        position: 'relative'
+                        border: '8px solid #000'
                     }}
                 >
                     {/* ヘッダー */}
