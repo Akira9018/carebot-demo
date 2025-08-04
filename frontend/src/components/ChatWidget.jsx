@@ -120,17 +120,17 @@ const ChatWidget = () => {
                         position: 'fixed',
                         bottom: '32px',
                         right: '32px',
-                        width: '400px',
+                        width: '320px',
                         height: '600px',
-                        backgroundColor: 'white',
-                        borderRadius: '24px',
-                        boxShadow: '0 20px 80px rgba(0, 0, 0, 0.15)',
+                        backgroundColor: '#000',
+                        borderRadius: '30px',
+                        boxShadow: '0 20px 80px rgba(0, 0, 0, 0.4)',
                         display: 'flex',
                         flexDirection: 'column',
                         overflow: 'hidden',
                         zIndex: 1000,
-                        backdropFilter: 'blur(10px)',
-                        border: '1px solid rgba(255, 255, 255, 0.2)'
+                        border: '8px solid #000',
+                        position: 'relative'
                     }}
                 >
                     {/* ヘッダー */}
